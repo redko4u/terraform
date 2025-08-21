@@ -8,7 +8,7 @@ resource "aws_instance" "db" {
     tags = var.tags
 }
 
-resource "aws_security_group" "allow_ssh" {
+resource "aws_security_group" "allow_sshs" {
     name = var.sg_name
     description = var.sg_description
 
