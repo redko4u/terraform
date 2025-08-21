@@ -23,7 +23,7 @@ variable "tags" {
 }
 
 variable "sg_name" {
-    default = "allow_ssh"
+    default = "allow_sshs"
 }
 
 variable "sg_description" {
