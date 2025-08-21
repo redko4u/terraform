@@ -1,21 +1,16 @@
-variable "image-id" {
-    type = string
-    default = "ami-090252cbe067a9e58"
-    description = "RHEL-9 AMI ID"
+#1. command line
+#2. tfvars
+#3. ENV variable
+#4. variable default value
+variable "image_id" {
+  type        = string #optional
+  default     = "ami-090252cbe067a9e58" #optional
+  description = "RHEL-9 AMI ID" #optional
 }
 
 variable "instance_type" {
     default = "t3.micro"
     type = string
-}
-
-variable "aws_security_group" {
-    default = "Practice-Security-Group"
-    type = string
-}
-
-variable "aws_security_group_id" {
-    default = "sg-073530d8f67d1b474"
 }
 
 variable "tags" {
@@ -26,10 +21,24 @@ variable "tags" {
         Name = "DB"
     }
 }
-variable "ssh_port" {
-    default = 22
+
+variable "sg_name" {
+    default = "allow_ssh"
 }
 
 variable "sg_description" {
     default = "allowing port 22"
+}
+
+variable "ssh_port" {
+    default = 22
+}
+
+variable "protocol" {
+    default = "tcp"
+}
+
+variable "allowed_cidr" {
+    type = list(string)
+    default = ["0.0.0.0/0"]
 }
