@@ -29,3 +29,7 @@ variable "tags" {
 variable "ssh_port" {
     default = 22
 }
+
+variable "sg_description" {
+    default = "allowing port 22"
+}

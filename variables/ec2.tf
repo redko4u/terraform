@@ -1,11 +1,11 @@
 # resource <resource-type> <resource-name>
 resource "aws_instance" "db" {
 
-    ami = "image-id"
+    ami = var.image-id
     vpc_security_group_ids =  [aws_security_group.allow_ssh.id]
-    instance_type = "var.instance_type"
-
-    tags = "var.tags"
+    instance_type = var.instance_type
+    
+    tags = var.tags
 }
 
 resource "aws_security_group" "allow_ssh" {
